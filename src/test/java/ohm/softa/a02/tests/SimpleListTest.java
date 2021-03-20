@@ -62,7 +62,7 @@ public class SimpleListTest {
 		SimpleListImpl result = (SimpleListImpl) testList.filter(o -> ((int) o) % 2 == 0);
 		for (Object o : result) {
 			int i = (int) o;
-			assertTrue(i % 2 == 0);
+			assertEquals(i % 2, 0);
 		}
 	}
 }
