@@ -1,6 +1,7 @@
 package ohm.softa.a02.tests;
 
 import ohm.softa.a02.SimpleFilter;
+import ohm.softa.a02.SimpleList;
 import ohm.softa.a02.SimpleListImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -63,6 +64,15 @@ public class SimpleListTest {
 		for (Object o : result) {
 			int i = (int) o;
 			assertEquals(i % 2, 0);
+		}
+	}
+
+	@Test
+	void anyNumberSmallerThan3() {
+		SimpleListImpl result = (SimpleListImpl) testList.filter(item -> ((int) item) < 3);
+		for (Object o : result) {
+			int i = (int) o;
+			assertTrue(i < 3);
 		}
 	}
 }
